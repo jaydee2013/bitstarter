@@ -63,18 +63,13 @@ clone(assertFileExists), HTMLFILE_DEFAULT)
 .option('-u, --url <url_address>', 'Url address') 
 .parse(process.argv);
 
-//var resultsFile = "";
 if(program.url){
   var resultsFile = "htmloutput.html";
   rest.get(program.url).on('complete', handler);
 }else{
-  //resultsFile = program.file;
   checkHtmlFileAndOutputResults(program.file, program.checks);
 }
 
-//var checkJson = checkHtmlFile(resultsFile, program.checks);
-//var outJson = JSON.stringify(checkJson, null, 4);
-//console.log(outJson);
 }else{
   exports.checkHtmlFile = checkHtmlFile;
 }
